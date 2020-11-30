@@ -1,0 +1,14 @@
+@import "~antd/lib/style/themes/default.less";
+
+@banner-text-color: #5C6899;
+
+
+.card-style() {
+  background: linear-gradient(to bottom, #2469F4, #113BBF);
+  box-shadow: 1px 1px 5px white;
+  transition: transform .3s @ease-in-out, box-shadow .3s @ease-in-out;
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 2px 2px 10px white;
+  }
+}
