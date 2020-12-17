@@ -1,3 +1,7 @@
+import Swal from 'sweetalert2';
+
+// import appointmentPostRequest from './request';
+
 export const header = [
   {
     title: 'Opção 1',
@@ -77,6 +81,48 @@ export const banner = [
     ],
   },
 ];
+
+function handleAppointmentModal() {
+  Swal.mixin({
+    input: 'text',
+    confirmButtonText: 'Próximo',
+    showCancelButton: true,
+    progressSteps: ['1', '2', '3', '4', '5'],
+  }).queue([
+    {
+      title: 'Olá!',
+      text: 'Digite seu nome',
+    },
+    {
+      text: 'Agora o seu telefone',
+    },
+    {
+      text: 'O Email',
+    },
+    {
+      title: 'Está quase...',
+      text: 'Escolha uma data',
+    },
+    {
+      title: 'Assunto',
+      text: 'O que deseja falar?',
+    },
+  ]).then((result) => {
+    if (result.value) {
+      const answers = JSON.stringify(result.value);
+      // appointmentPostRequest(result)
+      Swal.fire({
+        title: 'All done!',
+        html: `
+          Your answers:
+          <pre><code>${answers}</code></pre>
+        `,
+        confirmButtonText: 'Lovely!',
+      })
+    }
+  })
+}
+
 export const page1 = {
   title: 'Seção Funcional',
   children: [
@@ -86,7 +132,7 @@ export const page1 = {
       src: 'https://cdn.iconscout.com/icon/free/png-256/ebook-1473378-1251457.png',
       color: '#EB2F96',
       shadowColor: 'rgba(166, 55, 112, 0.15)',
-      link: () => console.log('teste desde e-book'),
+      link: console.log('test'),
     },
     {
       title: 'Marque sua consulta',
@@ -94,7 +140,7 @@ export const page1 = {
       src: 'https://images.vexels.com/media/users/3/149523/isolated/preview/fd623af923cde68bc9360810ed0d5724-calendar-date-3d-icon-by-vexels.png',
       color: '#1890FF',
       shadowColor: 'rgba(15, 93, 166, 0.15)',
-      link: () => console.log('teste desde consulta'),
+      link: () => handleAppointmentModal(),
     },
     {
       title: 'Conteúdos',
@@ -107,18 +153,18 @@ export const page1 = {
   ],
 };
 
-export const page3 = {
+export const fixedVideo = {
   title: 'Seção vídeo',
   children: [
     {
       img: 'https://pt.med-mash.ru/tmp/images/4.jpg',
       imgMobile: 'https://gw.alipayobjects.com/zos/rmsportal/HxEfljPlykWElfhidpxR.svg',
-      src: 'https://gw.alipayobjects.com/os/rmsportal/gCFHQneMNZMMYEdlHxqK.mp4',
+      src: 'https://www.youtube.com/watch?v=H7VGenCWbN4&list=RDSrIcw6fubpY&index=13',
     },
     {
       img: 'https://gw.alipayobjects.com/zos/rmsportal/iVOzVyhyQkQDhRsuyBXC.svg',
       imgMobile: 'https://gw.alipayobjects.com/zos/rmsportal/HxEfljPlykWElfhidpxR.svg',
-      src: 'https://gw.alipayobjects.com/os/rmsportal/gCFHQneMNZMMYEdlHxqK.mp4',
+      src: 'https://www.youtube.com/watch?v=H7VGenCWbN4&list=RDSrIcw6fubpY&index=13',
     },
   ],
 };

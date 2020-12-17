@@ -3,6 +3,29 @@ import { Row, Col, Tooltip } from 'antd';
 import { header } from './data';
 
 export default function Header(props) {
+  // <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalYT">Launch modal</button>
+  // <div class="modal fade" id="modalYT" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  //   <div class="modal-dialog modal-lg" role="document">
+  
+  //     {/* <!--Content--> */}
+  //     <div class="modal-content">
+  
+  //       {/* <!--Body--> */}
+  //       <div class="modal-body mb-0 p-0">
+  
+  //         <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+  //           <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/A3PDXmYoF5U"
+  //             allowfullscreen></iframe>
+  //         </div>
+  
+  //       </div>
+  //     </div>
+  //     {/* <!--/.Content--> */}
+  
+  //   </div>
+  // </div>
+
+  
   const menuChild = header.map((item, i) => {
     const content = item.children.map((child, ii) => (
       <a herf={child.link} key={ii.toString()} className="tip-block">

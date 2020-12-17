@@ -12,6 +12,7 @@ const { BgElement } = Element;
 export default class Page3 extends React.PureComponent {
   render() {
     const { isMobile } = this.props;
+
     const children = page3.children.map((item, i) => (
       <Element key={i.toString()}>
         <BgElement className="banner" key="bg">

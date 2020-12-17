@@ -50,6 +50,7 @@ export default class Design extends React.PureComponent {
   render() {
     const { hoverNum } = this.state;
     const { isMobile } = this.props;
+
     const children = page1.children.map((item, i) => {
       const isHover = hoverNum === i;
       const pointChild = [
@@ -69,7 +70,8 @@ export default class Design extends React.PureComponent {
         <Col md={8} xs={24} key={i.toString()} className="page1-item">
           <a
             className="page1-item-link"
-            href={item.link}
+            onClick={item.link}
+            href={item.href}
             target="_blank"
             onMouseEnter={() => { this.onMouseOver(i); }}
             onMouseLeave={this.onMouseOut}

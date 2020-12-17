@@ -24,6 +24,11 @@ export default function Page4() {
             {/* <span class="validation-text">Este campo precisa ser preenchido</span>  */}
           </FormGroup>
           <FormGroup className="formGroup">
+            <label className="formLabel"><b>Email</b></label>
+            <input placeholder="Digite seu email" className="nameInput" type="text" value="" required />
+            {/* <span class="validation-text">Este campo precisa ser preenchido</span>  */}
+          </FormGroup>
+          <FormGroup className="formGroup">
             <label className="formLabel"><b>Assunto</b></label>
             <input placeholder="Digite aqui o que quer falar..." className="subjectInput" type="text" value="" required />
           </FormGroup>
