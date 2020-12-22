@@ -1,7 +1,6 @@
 import React from 'react';
 import DocumentTitle from 'react-document-title';
 import { enquireScreen } from 'enquire-js';
-import Header from './Header';
 import Banner from './Banner';
 import Page1 from './Page1';
 import Page2 from './Page2';
@@ -20,6 +19,7 @@ enquireScreen((b) => {
 class Home extends React.PureComponent {
   state = {
     isMobile,
+    // eslint-disable-next-line react/no-unused-state
     showShadow: false,
   };
 
@@ -31,6 +31,7 @@ class Home extends React.PureComponent {
     });
   }
   navToShadow = (e) => {
+    // eslint-disable-next-line react/no-unused-state
     this.setState({ showShadow: e.mode === 'leave' });
   }
   render() {
@@ -44,7 +45,7 @@ class Home extends React.PureComponent {
         // <Page3 key="page3" isMobile={this.state.isMobile} />,
         <Page4 key="page4" />,
         <Footer key="footer" />,
-        <DocumentTitle title="蚂蚁体验云" key="title" />,
+        <DocumentTitle title="Ânima" key="title" />,
       ]
     );
   }

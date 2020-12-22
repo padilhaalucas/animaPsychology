@@ -1,7 +1,8 @@
 /* eslint-disable jsx-a11y/label-has-for */
 import React from 'react';
 import { page4 } from './data';
-import { FormGroup, Form, FormInput, FormTextarea, Button } from 'shards-react';
+// eslint-disable-next-line import/first
+import { FormGroup } from 'shards-react';
 
 export default function Page4() {
   return (
@@ -9,38 +10,36 @@ export default function Page4() {
       <div className="page">
         <h1>{page4.title}</h1>
         <i />
-
-        <Form className="contactForm">
+        {/* eslint-disable-next-line no-useless-concat */}
+        <form action={'mailto:deanabenetti@gmail.com?' + 'subject=Contato'} method="post" encytype="text/plain" className="contactForm">
           <FormGroup className="formGroup">
             <label className="formLabel" htmlFor="#username"><b>Nome</b></label>
-            <FormInput className="nameInput" placeholder="Digite seu nome" />
+            <input type="text" name="" id="name" className="nameInput" placeholder="Digite seu nome" />
           </FormGroup>
           <FormGroup className="formGroup">
             <label className="formLabel"><b>Email</b></label>
-            <FormInput className="nameInput" placeholder="Digite seu email" />
+            <input type="text" name="" className="nameInput" placeholder="Digite seu email" />
             {/* <span class="validation-text">Este campo precisa ser preenchido</span>  */}
           </FormGroup>
           <FormGroup className="formGroup">
             <label className="formLabel" htmlFor="#password"><b>Motivo</b></label>
-            <FormTextarea className="subjectInput" type="text" placeholder="Digite aqui o assunto" />
+            <input type="text" id="subject" style={{ marginBottom: '5%', height: '20vh' }} name="Assunto" className="nameInput" placeholder="Digite aqui o assunto" />
           </FormGroup>
-          <Button outline theme="secondary">
-            Secondary
-          </Button>
-        </Form>
-
-
-        {/* <OverPack playScale="0.3">
-          <QueueAnim
-            component={Row}
-            className="page4-item-wrapper"
-            key="item"
-            leaveReverse
-            type="bottom"
-          >
-            {children}
-          </QueueAnim>
-        </OverPack> */}
+          <input
+            style={{
+              backgroundColor: 'rgba(137, 13, 141, 0.7)',
+              border: 'double',
+              borderRadius: '15%',
+              width: '10%',
+              boxShadow: '1px 1px 5px rgba(255, 255, 255, 0.7)',
+              color: 'white',
+              height: '7%',
+              cursor: 'pointer',
+            }}
+            type="submit"
+            value="Submeter"
+          />
+        </form>
       </div>
     </div>
   );

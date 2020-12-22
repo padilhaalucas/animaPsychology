@@ -3,12 +3,6 @@ import QueueAnim from 'rc-queue-anim';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import { Row, Col, Icon } from 'antd';
 
-import Tetris from './technology-comp/Tetris';
-import Column from './technology-comp/Column';
-import Coordinate from './technology-comp/Coordinate';
-import Building from './technology-comp/Building';
-
-
 const pageData = [
   {
     title: 'Missão',
@@ -36,20 +30,22 @@ const pageData = [
 
 export default class Design extends React.PureComponent {
   state = {
+    // eslint-disable-next-line react/no-unused-state
     hover: null,
   };
   onMouseEnter = (hover) => {
     this.setState({
+      // eslint-disable-next-line react/no-unused-state
       hover,
     });
   }
   onMouseLeave = () => {
     this.setState({
+      // eslint-disable-next-line react/no-unused-state
       hover: null,
     });
   }
   render() {
-    const { isMobile } = this.props;
     const children = pageData.map((item, i) => {
       const colProps = {
         md: item.full ? 24 : 8, xs: 24,
@@ -61,12 +57,6 @@ export default class Design extends React.PureComponent {
             onMouseEnter={() => { this.onMouseEnter(item.title); }}
             onMouseLeave={this.onMouseLeave}
           >
-            {/* <div className="page2-item-bg">
-              {item.Bg && React.createElement(item.Bg, {
-                hover: !isMobile && this.state.hover === item.title,
-                isMobile,
-              })}
-            </div> */}
             <div className="page2-item-desc">
               <h4>{item.title}</h4>
               <p>{item.content}</p>

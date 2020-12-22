@@ -16,12 +16,11 @@ class Banner extends React.PureComponent {
     return 1000;
   };
   render() {
-    const { isMobile } = this.props;
     const bannerChildren = banner.map((item, i) => {
       const children = item.children.map((child, ii) => {
         const tag = child.tag === 'button' ? 'div' : child.tag || 'p';
         const childrenToRender = child.tag === 'button' ?
-          <Button style={{ backgroundColor: '#890d8d', boxShadow: '1px 1px 5px rgba(255, 255, 255, 0.7)' }}><a href={item[i]} target="_blank">{child.children}</a></Button> :
+          <Button style={{ backgroundColor: '#890d8d', boxShadow: '1px 1px 5px rgba(255, 255, 255, 0.7)' }}><a onClick={() => ''} href="https://instagram.com/psidelisbenetti" target="_blank">{child.children}</a></Button> :
           child.children;
 
         return React.createElement(tag, {
@@ -35,7 +34,7 @@ class Banner extends React.PureComponent {
           <BgElement
             key="bg"
             className="banner-bg"
-            style={{ backgroundImage: `url(${isMobile ? item.imgMobile : item.img})` }}
+            style={{ backgroundImage: `url(${item.img})` }}
           />
           <QueueAnim
             key="text"

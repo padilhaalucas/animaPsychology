@@ -20,7 +20,7 @@ export default class Page3 extends React.PureComponent {
             loop
             muted
             controls={['PlayPause', 'Seek', 'Time', 'Volume', 'Fullscreen']}
-            poster={isMobile ? item.imgMobile : item.img}
+            poster={item.img}
             key="video"
           >
             <source src={item.src} />

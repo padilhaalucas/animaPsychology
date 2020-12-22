@@ -1,8 +1,5 @@
-import React from 'react';
 import Swal from 'sweetalert2';
-import ModalVideo from 'react-modal-video'
-
-// import appointmentPostRequest from './request';
+import axios from 'axios';
 
 export const header = [
   {
@@ -56,7 +53,7 @@ const aboutMeText = 'Sou Psicóloga Licenciada pela Universidade Franciscana UFN
 export const banner = [
   {
     img: 'https://ae01.alicdn.com/kf/HTB1ZjJ0nrGYBuNjy0Foq6AiBFXaK/Foto-pano-de-fundo-rosa-textura-de-m-rmore-de-M-rmore-piso-textura-de-pedra.jpg',
-    imgMobile: 'https://gw.alipayobjects.com/zos/rmsportal/ksMYqrCyhwQNdBKReFIU.svg',
+    imgMobile: '',
     className: 'seeconf-wrap',
     children: [
       { children: '', className: 'seeconf-fst-name' },
@@ -66,14 +63,13 @@ export const banner = [
         children: 'Sobre mim',
         className: 'banner-button',
         tag: 'button',
-        link: 'https://seeconf.alipay.com/',
       },
       { children: '', className: 'seeconf-time' },
     ],
   },
   {
     img: 'https://ae01.alicdn.com/kf/HTB1ZjJ0nrGYBuNjy0Foq6AiBFXaK/Foto-pano-de-fundo-rosa-textura-de-m-rmore-de-M-rmore-piso-textura-de-pedra.jpg',
-    imgMobile: 'https://gw.alipayobjects.com/zos/rmsportal/ksMYqrCyhwQNdBKReFIU.svg',
+    imgMobile: '',
     className: 'seeconf-wrap',
     children: [
       { children: '', className: 'seeconf-en-name' },
@@ -96,14 +92,14 @@ function handleAppointmentModal() {
       text: 'Digite seu nome',
     },
     {
-      text: 'Agora o seu telefone',
+      text: 'Agora o seu telefone (xx) xxxxxxxxx',
     },
     {
       text: 'O Email',
     },
     {
       title: 'Está quase...',
-      text: 'Escolha uma data',
+      text: 'Informe uma data (dd-mm-aaaa)',
     },
     {
       title: 'Assunto',
@@ -111,61 +107,92 @@ function handleAppointmentModal() {
     },
   ]).then((result) => {
     if (result.value) {
-      const answers = JSON.stringify(result.value);
-      // appointmentPostRequest(result)
-      Swal.fire({
-        title: `Atendimento Marcado ${result.value[0]}`,
-        html: `
-          Bem vinda à Ânima!
-          Se preciso, entrarei em contato no ${result.value[1]}
-        `,
-        confirmButtonText: 'Lovely!',
-      })
+      // eslint-disable-next-line no-inner-declarations
+      function reverseStr(str) {
+        return str.split('-').reverse().join('-');
+      }
+
+      const answers = {
+        client_name: result.value[0],
+        phone: result.value[1],
+        email: result.value[2],
+        date: reverseStr(result.value[3]),
+        subject: result.value[4],
+      };
+
+      axios.post('http://localhost:8005/appointment/', answers)
+        .then(() => {
+          Swal.fire({
+          // eslint-disable-next-line camelcase
+            title: `Atendimento Marcado ${answers.client_name}`,
+            icon: 'success',
+            html: `
+              Bem vinda à Ânima!
+              Se preciso, entrarei em contato no ${answers.phone}
+            `,
+            confirmButtonText: 'Obrigado!',
+          });
+        })
+        .catch(() => {
+          Swal.fire({
+            title: 'Ocorreu um erro',
+            icon: 'error',
+            html: `
+              Por favor, tente mais tarde.
+              Ou entre em contato no 99142-0880.
+            `,
+            confirmButtonText: 'Ok!',
+          });
+        });
     }
-  })
+  });
 }
 
-// const Modal = () => {
+function handleEbook() {
+  Swal.fire({
+  // eslint-disable-next-line camelcase
+    title: 'Aguarde...',
+    icon: 'info',
+    html: `
+      O E-book está quase pronto! 😍
+    `,
+    confirmButtonText: 'Ok!',
+  });
+}
 
-//   const [isOpen, setOpen] = useState(false);
-
-//   return (
-//   // eslint-disable-next-line react/jsx-filename-extension
-//     <React.Fragment>
-//       <ModalVideo channel="youtube" autoplay isOpen={isOpen} videoId="L61p2uyiMSo" onClose={() => setOpen(false)} />
-
-//       <button className="btn-primary" onClick={() => setOpen(true)}>VIEW DEMO</button>
-//     </React.Fragment>
-//   );
-// };
-
+async function handleRedirectToYoutube() {
+  const response = await fetch('http://127.0.0.1:8005/config/1/');
+  const data = await response.json();
+  const urlFromAPI = data.secondURL;
+  window.open(urlFromAPI);
+}
 
 export const page1 = {
-  title: 'Seção Funcional',
+  title: 'O que pode fazer',
   children: [
     {
       title: 'E-book',
       content: 'Veja o meu e-book',
       src: 'https://cdn.iconscout.com/icon/free/png-256/ebook-1473378-1251457.png',
-      color: '#EB2F96',
-      shadowColor: 'rgba(166, 55, 112, 0.15)',
-      link: console.log('test'),
+      color: '#1890FF',
+      shadowColor: 'rgba(15, 93, 166, 0.1)',
+      link: () => handleEbook(),
     },
     {
       title: 'Marque sua consulta',
       content: 'Veja a disponibilidade',
       src: 'https://images.vexels.com/media/users/3/149523/isolated/preview/fd623af923cde68bc9360810ed0d5724-calendar-date-3d-icon-by-vexels.png',
-      color: '#1890FF',
-      shadowColor: 'rgba(15, 93, 166, 0.15)',
+      color: '#EB2F96',
+      shadowColor: 'rgba(166, 55, 112, 0.1)',
       link: () => handleAppointmentModal(),
     },
     {
       title: 'Conteúdos',
       content: 'Veja aqui nossos conteúdos',
-      src: 'https://gw.alipayobjects.com/zos/rmsportal/eLtHtrKjXfabZfRchvVT.svg',
-      color: '#AB33F7',
-      shadowColor: 'rgba(112, 73, 166, 0.15)',
-      link: () => console.log('test'),
+      src: 'https://www.freeiconspng.com/thumbs/youtube-icon/youtube-icon-7.png',
+      color: 'red',
+      shadowColor: 'rgba(183, 9, 9, 0.1)',
+      link: () => handleRedirectToYoutube(),
     },
   ],
 };

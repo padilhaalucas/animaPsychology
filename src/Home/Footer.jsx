@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer className="footer page-wrapper">
       <div className="footer-wrap page">
-        <Row>
+        <Row className="socialMediaRow">
           <h2>Encontre-nos</h2>
           <Row>
 
@@ -71,13 +71,13 @@ export default function Footer() {
       </div>
       <div className="footer-bottom">
         <div className="page">
-          <Row>
-            <Col md={4} xs={24} style={{ textAlign: 'left' }} className="mobile-hide">
+          <Row class="padtech">
+            <Col md={4} xs={24} style={{ textAlign: 'center' }}>
               <a
                 href="https://padtech.netlify.app"
                 rel="noopener noreferrer"
                 target="_blank"
-                style={{ color: 'rgba(256, 256, 256, 0.9)', textAlign: 'left' }}
+                style={{ color: 'rgba(256, 256, 256, 0.9)', textAlign: 'center' }}
               >
                 Made by <b>PAD Tech ® </b>| 2020
               </a>
