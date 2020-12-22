@@ -1,4 +1,6 @@
+import React from 'react';
 import Swal from 'sweetalert2';
+import ModalVideo from 'react-modal-video'
 
 // import appointmentPostRequest from './request';
 
@@ -112,16 +114,31 @@ function handleAppointmentModal() {
       const answers = JSON.stringify(result.value);
       // appointmentPostRequest(result)
       Swal.fire({
-        title: 'All done!',
+        title: `Atendimento Marcado ${result.value[0]}`,
         html: `
-          Your answers:
-          <pre><code>${answers}</code></pre>
+          Bem vinda à Ânima!
+          Se preciso, entrarei em contato no ${result.value[1]}
         `,
         confirmButtonText: 'Lovely!',
       })
     }
   })
 }
+
+// const Modal = () => {
+
+//   const [isOpen, setOpen] = useState(false);
+
+//   return (
+//   // eslint-disable-next-line react/jsx-filename-extension
+//     <React.Fragment>
+//       <ModalVideo channel="youtube" autoplay isOpen={isOpen} videoId="L61p2uyiMSo" onClose={() => setOpen(false)} />
+
+//       <button className="btn-primary" onClick={() => setOpen(true)}>VIEW DEMO</button>
+//     </React.Fragment>
+//   );
+// };
+
 
 export const page1 = {
   title: 'Seção Funcional',
@@ -148,7 +165,7 @@ export const page1 = {
       src: 'https://gw.alipayobjects.com/zos/rmsportal/eLtHtrKjXfabZfRchvVT.svg',
       color: '#AB33F7',
       shadowColor: 'rgba(112, 73, 166, 0.15)',
-      link: () => console.log('teste desde conteúdos'),
+      link: () => console.log('test'),
     },
   ],
 };

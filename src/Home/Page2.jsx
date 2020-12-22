@@ -70,9 +70,6 @@ export default class Design extends React.PureComponent {
             <div className="page2-item-desc">
               <h4>{item.title}</h4>
               <p>{item.content}</p>
-              <p className="page2-item-links">
-                {item.links}
-              </p>
             </div>
           </div>
         </Col>
