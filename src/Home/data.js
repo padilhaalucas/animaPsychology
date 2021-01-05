@@ -197,34 +197,8 @@ export const page1 = {
   ],
 };
 
-export const fixedVideo = {
-  title: 'Seção vídeo',
-  children: [
-    {
-      img: 'https://pt.med-mash.ru/tmp/images/4.jpg',
-      imgMobile: 'https://gw.alipayobjects.com/zos/rmsportal/HxEfljPlykWElfhidpxR.svg',
-      src: 'https://www.youtube.com/watch?v=H7VGenCWbN4&list=RDSrIcw6fubpY&index=13',
-    },
-    {
-      img: 'https://gw.alipayobjects.com/zos/rmsportal/iVOzVyhyQkQDhRsuyBXC.svg',
-      imgMobile: 'https://gw.alipayobjects.com/zos/rmsportal/HxEfljPlykWElfhidpxR.svg',
-      src: 'https://www.youtube.com/watch?v=H7VGenCWbN4&list=RDSrIcw6fubpY&index=13',
-    },
-  ],
-};
-
 export const page4 = {
   title: 'Fale conosco',
-  children: [
-    'https://gw.alipayobjects.com/zos/rmsportal/qImQXNUdQgqAKpPgzxyK.svg', // 阿里巴巴
-    'https://gw.alipayobjects.com/zos/rmsportal/LqRoouplkwgeOVjFBIRp.svg', // 蚂蚁金服
-    'https://gw.alipayobjects.com/zos/rmsportal/TLCyoAagnCGXUlbsMTWq.svg', // 人民网
-    'https://gw.alipayobjects.com/zos/rmsportal/HmCGMKcJQMwfPLNCIhOH.svg', // cisco
-    'https://gw.alipayobjects.com/zos/rmsportal/aqldfFDDqRVFRxqLUZOk.svg', // GrowingIO
-    'https://gw.alipayobjects.com/zos/rmsportal/rqNeEFCGFuwiDKHaVaPp.svg', // 饿了么
-    'https://gw.alipayobjects.com/zos/rmsportal/FdborlfwBxkWIqKbgRtq.svg', // 滴滴出行
-    'https://gw.alipayobjects.com/zos/rmsportal/coPmiBkAGVTuTNFVRUcg.png', // 飞凡网
-  ],
 };
 
 export const footer = [
