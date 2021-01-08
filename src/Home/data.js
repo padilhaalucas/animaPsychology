@@ -120,7 +120,7 @@ function handleAppointmentModal() {
         subject: result.value[4],
       };
 
-      axios.post('http://localhost:8005/appointment/', answers)
+      axios.post('http://clinicaanima.com/api/appointment/', answers)
         .then(() => {
           Swal.fire({
           // eslint-disable-next-line camelcase
