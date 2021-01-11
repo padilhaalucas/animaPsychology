@@ -26,7 +26,7 @@ export default function Page4() {
               backgroundColor: 'rgba(137, 13, 141, 0.7)',
               border: 'double',
               borderRadius: '6%',
-              width: '25%',
+              width: '32%',
               boxShadow: '1px 1px 5px rgba(255, 255, 255, 0.7)',
               color: 'white',
               height: '8%',
