@@ -48,8 +48,6 @@ export const header = [
   },
 ];
 
-const aboutMeText = 'Sou Psicóloga Licenciada pela Universidade Franciscana UFN - Santa Maria, RS e pós-graduada pelo Instituto Português de Psicologia - Lisboa, PT.Trabalho na área de clínica On-line, com foco na autoestima da mulher e o feminino. Durante minhas experiências profissionais, sempre visualizei o autoconhecimento como uma chave para abrir diversas portas. Hoje, vejo que o autoconhecimento leva à uma melhoria em praticamente todos os âmbitos da vida dos meus pacientes.Dou ênfase em inovar na psicologia e ir além do padrão de psicóloga clínica. Valorizo a ética e a saúde mental, humanizando os atendimentos.';
-
 export const banner = [
   {
     img: 'https://ae01.alicdn.com/kf/HTB1ZjJ0nrGYBuNjy0Foq6AiBFXaK/Foto-pano-de-fundo-rosa-textura-de-m-rmore-de-M-rmore-piso-textura-de-pedra.jpg',
@@ -57,8 +55,8 @@ export const banner = [
     className: 'seeconf-wrap',
     children: [
       { children: '', className: 'seeconf-fst-name' },
-      { children: 'Ânima', className: 'seeconf-title', tag: 'h1' },
-      { children: 'Sinta-se em casa!', className: 'seeconf-cn-name' },
+      { children: 'Ânima', className: 'seeconf-title-1', tag: 'h1' },
+      { children: 'Sinta-se em casa!', className: 'seeconf-cn-name-1' },
       {
         children: 'Sobre mim',
         className: 'banner-button',
@@ -73,9 +71,9 @@ export const banner = [
     className: 'seeconf-wrap',
     children: [
       { children: '', className: 'seeconf-en-name' },
-      { children: 'Quem eu sou?', className: 'seeconf-title', tag: 'h1' },
-      { children: aboutMeText, className: 'seeconf-cn-name' },
-      { children: '2020', className: 'seeconf-time' },
+      { children: 'Quem eu sou?', className: 'seeconf-title-2', tag: 'h1' },
+      { children: 'Sou Psicóloga Licenciada pela Universidade Franciscana UFN - Santa Maria, RS e pós-graduada pelo Instituto Português de Psicologia - Lisboa, PT.Trabalho na área de clínica On-line, com foco na autoestima da mulher e o feminino. Durante minhas experiências profissionais, sempre visualizei o autoconhecimento como uma chave para abrir diversas portas. Hoje, vejo que o autoconhecimento leva à uma melhoria em praticamente todos os âmbitos da vida dos meus pacientes.Dou ênfase em inovar na psicologia e ir além do padrão de psicóloga clínica. Valorizo a ética e a saúde mental, humanizando os atendimentos.', className: 'seeconf-cn-name-2' },
+      { children: '2021', className: 'seeconf-time' },
     ],
   },
 ];
@@ -84,6 +82,7 @@ function handleAppointmentModal() {
   Swal.mixin({
     input: 'text',
     confirmButtonText: 'Próximo',
+    cancelButtonText: 'Cancelar',
     showCancelButton: true,
     progressSteps: ['1', '2', '3', '4', '5'],
   }).queue([
@@ -120,7 +119,7 @@ function handleAppointmentModal() {
         subject: result.value[4],
       };
 
-      axios.post('http://clinicaanima.com/api/appointment/', answers)
+      axios.post('https://clinicaanima.com/api/appointment/', answers)
         .then(() => {
           Swal.fire({
           // eslint-disable-next-line camelcase
@@ -151,24 +150,27 @@ function handleAppointmentModal() {
 function handleEbook() {
   Swal.fire({
   // eslint-disable-next-line camelcase
-    title: 'Aguarde...',
-    icon: 'info',
+    title: 'Psicologia e o feminino',
     html: `
-      O E-book está quase pronto! 😍
+      Faça o download do seu exemplar! 😍
     `,
-    confirmButtonText: 'Ok!',
+    confirmButtonText: 'Eu quero!',
+  }).then((res) => {
+    if (res.value) {
+      window.open('https://docdro.id/WajjdAP');
+    }
   });
 }
 
 async function handleRedirectToYoutube() {
-  const response = await fetch('http://127.0.0.1:8005/config/1/');
+  const response = await fetch('https://clinicaanima.com/api/config/1/');
   const data = await response.json();
   const urlFromAPI = data.secondURL;
   window.open(urlFromAPI);
 }
 
 export const page1 = {
-  title: 'O que pode fazer',
+  title: 'Conteúdos e agendamento de consultas',
   children: [
     {
       title: 'E-book',

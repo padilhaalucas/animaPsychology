@@ -71,7 +71,7 @@ export default function Footer() {
       </div>
       <div className="footer-bottom">
         <div className="page">
-          <Row class="padtech">
+          <Row className="padtech">
             <Col md={4} xs={24} style={{ textAlign: 'center' }}>
               <a
                 href="https://padtech.netlify.app"

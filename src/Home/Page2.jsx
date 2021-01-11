@@ -10,13 +10,13 @@ const pageData = [
     links: (<a href="https://antv.alipay.com" target="_blank">Ver&nbsp;&nbsp;<Icon type="right" /></a>),
   },
   {
-    title: 'Valores',
-    content: 'Atender com ética, transparência e responsabilidade, demonstrando interesse genuíno por cada história de vida. Valorizo, acima de tudo, visualizar o paciente como um todo, como um ser em construção e desconstrução, para além de um possível diagnóstico. Meu foco não é diagnosticar: é compreender, escutar e acolher.',
+    title: 'Visão',
+    content: 'Ser referência para todas as mulheres que enfrentam problemas de autoestima/insegurança, para que possam desenvolver suas potencialidades pessoais diárias. Transmitir a importância da psicoterapia desmistificando os tabus envolvidos, normalizar o cuidar da saúde mental em casa ou qualquer ambiente agradável para realizar uma sessão.',
     links: (<a href="https://antv.alipay.com" target="_blank">Ver&nbsp;&nbsp;<Icon type="right" /></a>),
   },
   {
-    title: 'Objetivos',
-    content: 'Transmitir a importância da psicoterapia para todas as pessoas e desmistificar os tabus envolvidos, normalizando o cuidar da saúde mental em casa ou qualquer ambiente agradável para realizar uma sessão.  Auxiliar as pessoas a alcançarem seu sucesso pessoal e profissional, conquistar uma boa autoestima/autonomia. ',
+    title: 'Valores',
+    content: 'Atender com ética, transparência e responsabilidade, demonstrando interesse genuíno por cada história de vida. Valorizo, acima de tudo, visualizar o paciente como um todo, como um ser em construção e desconstrução, para além de um possível diagnóstico. Meu foco não é diagnosticar: é compreender, escutar e acolher.',
     links: (<a href="https://antv.alipay.com" target="_blank">Ver&nbsp;&nbsp;<Icon type="right" /></a>),
   },
   // {

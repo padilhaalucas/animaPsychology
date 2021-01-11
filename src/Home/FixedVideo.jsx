@@ -8,7 +8,7 @@ function FixedVideo() {
   const [url, setUrl] = useState('');
 
   useEffect(async () => {
-    const response = await fetch('http://127.0.0.1:8005/config/1/');
+    const response = await fetch('https://clinicaanima.com/api/config/1/');
     const data = await response.json();
     // eslint-disable-next-line prefer-destructuring
     const mainURL = data.mainURL;

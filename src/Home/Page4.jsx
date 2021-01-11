@@ -11,7 +11,7 @@ export default function Page4() {
         <h1>{page4.title}</h1>
         <i />
         {/* eslint-disable-next-line no-useless-concat */}
-        <form action={'mailto:deanabenetti@gmail.com?' + 'subject=Contato'} method="post" encytype="text/plain" className="contactForm">
+        <form method="post" encytype="text/plain" className="contactForm">
           <FormGroup className="formGroup">
             <label className="formLabel" htmlFor="#username"><b>Nome</b></label>
             <input type="text" name="" id="name" className="nameInput" placeholder="Digite seu nome" />
@@ -25,20 +25,27 @@ export default function Page4() {
             <label className="formLabel" htmlFor="#password"><b>Motivo</b></label>
             <input type="text" id="subject" style={{ marginBottom: '5%', height: '20vh' }} name="Assunto" className="nameInput" placeholder="Digite aqui o assunto" />
           </FormGroup>
-          <input
+          <a
             style={{
               backgroundColor: 'rgba(137, 13, 141, 0.7)',
               border: 'double',
-              borderRadius: '15%',
-              width: '10%',
+              borderRadius: '6%',
+              width: '25%',
               boxShadow: '1px 1px 5px rgba(255, 255, 255, 0.7)',
               color: 'white',
-              height: '7%',
+              height: '8%',
               cursor: 'pointer',
+              alignItems: 'center',
+              justifyContent: 'center',
+              display: 'flex',
+              fontSize: '20px',
             }}
+            href="mailto:deanabenetti@gmail.com"
             type="submit"
             value="Submeter"
-          />
+          >
+            Submeter
+          </a>
         </form>
       </div>
     </div>
