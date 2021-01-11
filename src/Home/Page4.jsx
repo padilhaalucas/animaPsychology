@@ -1,10 +1,11 @@
 /* eslint-disable jsx-a11y/label-has-for */
-import React from 'react';
+import React, { useState } from 'react';
 import { page4 } from './data';
 // eslint-disable-next-line import/first
 import { FormGroup } from 'shards-react';
 
 export default function Page4() {
+  const [subject, setSubject] = useState('');
   return (
     <div className="page-wrapper page4">
       <div className="page">
@@ -17,13 +18,8 @@ export default function Page4() {
             <input type="text" name="" id="name" className="nameInput" placeholder="Digite seu nome" />
           </FormGroup>
           <FormGroup className="formGroup">
-            <label className="formLabel"><b>Email</b></label>
-            <input type="text" name="" className="nameInput" placeholder="Digite seu email" />
-            {/* <span class="validation-text">Este campo precisa ser preenchido</span>  */}
-          </FormGroup>
-          <FormGroup className="formGroup">
-            <label className="formLabel" htmlFor="#password"><b>Motivo</b></label>
-            <input type="text" id="subject" style={{ marginBottom: '5%', height: '20vh' }} name="Assunto" className="nameInput" placeholder="Digite aqui o assunto" />
+            <label className="formLabel" htmlFor="#password"><b>Mensagem</b></label>
+            <input type="text" id="subject" style={{ marginBottom: '5%', height: '20vh' }} name="Assunto" className="nameInput" placeholder="Digite aqui o assunto" onBlur={() => setSubject(document.getElementById('subject').value)} />
           </FormGroup>
           <a
             style={{
@@ -40,7 +36,7 @@ export default function Page4() {
               display: 'flex',
               fontSize: '20px',
             }}
-            href="mailto:deanabenetti@gmail.com"
+            href={`mailto:deanabenetti@gmail.com?subject=Pedido%20de%20Contato&body=${subject}`}
             type="submit"
             value="Submeter"
           >
