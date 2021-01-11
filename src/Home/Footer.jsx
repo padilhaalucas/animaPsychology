@@ -4,9 +4,9 @@ import { footer } from './data';
 
 export default function Footer() {
   const phoneNumber = '+5555991420880';
-
+  const isMobile = window.screen.width < 435;
   return (
-    <footer className="footer page-wrapper">
+    <footer className="footer page-wrapper" style={isMobile ? { height: '70vh' } : {}}>
       <div className="footer-wrap page">
         <Row className="socialMediaRow">
           <h2>Encontre-nos</h2>

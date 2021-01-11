@@ -166,7 +166,7 @@ async function handleRedirectToYoutube() {
   const response = await fetch('https://clinicaanima.com/api/config/1/');
   const data = await response.json();
   const urlFromAPI = data.secondURL;
-  window.open(urlFromAPI);
+  window.location.assign(urlFromAPI);
 }
 
 export const page1 = {

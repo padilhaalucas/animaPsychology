@@ -6,9 +6,11 @@ import { FormGroup } from 'shards-react';
 
 export default function Page4() {
   const [subject, setSubject] = useState('');
+  const isMobile = window.screen.width < 435;
+
   return (
     <div className="page-wrapper page4">
-      <div className="page">
+      <div className={isMobile ? 'page-1' : 'page-2'}>
         <h1>{page4.title}</h1>
         <i />
         {/* eslint-disable-next-line no-useless-concat */}
