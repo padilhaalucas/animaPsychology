@@ -79,7 +79,7 @@ export default function Footer() {
                 target="_blank"
                 style={{ color: 'rgba(256, 256, 256, 0.9)', textAlign: 'center' }}
               >
-                Made by <b>PAD Tech ® </b>| 2020
+                Made by <b>PAD Tech ® </b>| 2021
               </a>
             </Col>
           </Row>
