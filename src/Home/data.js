@@ -157,7 +157,13 @@ function handleEbook() {
     confirmButtonText: 'Eu quero!',
   }).then((res) => {
     if (res.value) {
-      window.open('https://docdro.id/WajjdAP');
+      const link = document.createElement('a');
+      link.href = 'https://pdfhost.io/v/7s9oLfNEx_ebookpdf.pdf';
+      link.target = '_blank';
+      link.download = 'Meu e-book.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     }
   });
 }
